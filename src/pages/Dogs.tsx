@@ -15,14 +15,15 @@ const Dogs = () => {
     startPolling, //custom polling
     stopPolling,
   } = useQuery(GET_DOG_PHOTO, {
+    // fetchPolicy: "network-only",
     variables: { breed: selectedDog }, //payload is send in variables with key value pair
-    nextFetchPolicy: "cache-first",
+    // nextFetchPolicy: "cache-first",
     // pollInterval: 500, //calling api after every 0.5 s
   });
   const [getDog, { data: bullDogData, loading: bullDogLoading }] = useLazyQuery(
     GET_DOG_PHOTO,
     {
-      //   fetchPolicy: "network-only", //it will don't allow cache
+      // fetchPolicy: "network-only", //it will don't allow cache
       //   nextFetchPolicy: "cache-first",    //to allow cache
     }
   );
@@ -32,6 +33,9 @@ const Dogs = () => {
   };
 
   console.log("previousData", previousData); //undefined during first fetching
+console.log("networkStatus",networkStatus);
+console.log("NetworkStatus.refetch",NetworkStatus.refetch);
+
 
   return (
     <div

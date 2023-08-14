@@ -4,6 +4,7 @@ import Dogs from "./pages/Dogs";
 import Home from "./pages/Home";
 import SuspenseDogs from "./pages/SuspenseDogs";
 import AddCharacter from "./pages/AddCharacter";
+import RestApi from "./pages/RestApi";
 
 function App() {
   return (
@@ -13,7 +14,8 @@ function App() {
       {/* <Suspense fallback={<div>Loading...</div>}>
         <SuspenseDogs />
       </Suspense> */}
-      <AddCharacter />
+      {/* <AddCharacter /> */}
+      <RestApi/>
     </div>
   );
 }
